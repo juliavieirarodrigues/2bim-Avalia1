@@ -22,6 +22,6 @@ Framework preset: `None`. Build command: vazio. Build output directory: `public`
 
 ## Identificação (preencha após o fork)
 
-Nome: 
-RA: 
-URL: https://
+Nome: Julia Camilly Vieira Rodrigues
+RA: 2025207304
+URL: https://2bim-avalia1-22a.pages.dev
