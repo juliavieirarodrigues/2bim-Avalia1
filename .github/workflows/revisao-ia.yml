@@ -11,12 +11,13 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Simula análise de segurança por IA
+      - name: Detetar vulnerabilidade com IA (Simulação)
         run: |
-          echo "A analisar alteracoes do Pull Request..."
-          if git diff --origin/main HEAD | grep -q "DROP TABLE"; then
-            echo "::error:: ALERTA DE SEGURANCA: Detetado comando potencialmente perigoso (DROP TABLE)."
+          echo "A analisar os ficheiros modificados..."
+          # Procura por DROP TABLE em qualquer ficheiro .sql alterado
+          if git diff --name-only origin/main...HEAD | xargs -I {} grep -q "DROP TABLE" {} 2>/dev/null; then
+            echo "::error:: ALERTA DE SEGURANÇA (IA): Comando perigoso 'DROP TABLE' detetado no código!"
             exit 1
           else
-            echo "Nenhuma vulnerabilidade critica detetada pela IA."
+            echo "Nenhuma vulnerabilidade detetada."
           fi
