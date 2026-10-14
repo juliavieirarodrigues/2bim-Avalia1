@@ -1,1 +1,0 @@
-CREATE TABLEEE erro_sintaxe (id INT);
