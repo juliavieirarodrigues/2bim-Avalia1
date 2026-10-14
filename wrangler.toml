@@ -1,0 +1,7 @@
+name = "desenho-assinado"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "desenho-assinado-db"
+database_id = "00000000-0000-0000-0000-000000000000"
