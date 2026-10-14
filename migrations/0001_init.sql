@@ -3,3 +3,5 @@ CREATE TABLE IF NOT EXISTS notas (
     aluno TEXT NOT NULL,
     nota INTEGER
 );
+
+--teste
