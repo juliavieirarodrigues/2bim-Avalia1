@@ -1,1 +1,0 @@
-CREATE TABLEEE erro (id INT);
