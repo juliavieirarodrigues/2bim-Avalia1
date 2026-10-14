@@ -1,0 +1,22 @@
+name: Revisão por IA
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  analisar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Simula análise de segurança por IA
+        run: |
+          echo "A analisar alteracoes do Pull Request..."
+          if git diff --origin/main HEAD | grep -q "DROP TABLE"; then
+            echo "::error:: ALERTA DE SEGURANCA: Detetado comando potencialmente perigoso (DROP TABLE)."
+            exit 1
+          else
+            echo "Nenhuma vulnerabilidade critica detetada pela IA."
+          fi
